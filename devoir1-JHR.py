@@ -1,0 +1,43 @@
+### BONJOUR FÉLIX, ICI JEAN-HUGUES ROY
+### TOUS MES COMMENTAIRES SERONT EN MAJUSCULES ET PRÉCÉDÉS DE 3 # (HASHTAGS)
+
+### TOUT D'ABORD, TON FICHIER DEVAIT SE TERMINER PAR ".py" -> ASSEZ IMPORTANT POUR QUE PYTHON PUISSE L'EXÉCUTER
+
+url = "https://montrealcampus.ca?p=" ### TRÈS BON DÉPART :)
+
+# f = [20000:30145] ### C'EST ICI QUE ÇA BLOQUE.
+### ON SE SERT DES ÉTENDUES [x:y] POUR ALLER CHERCHER DES ÉLÉMENTS DANS UNE LISTE OU UN TEXTE. "x" ET "y" RÉFÈRENT AU NUMÉROS D'INDEX.
+### ON NE PEUT PAS S'EN SERVIR POUR CRÉER DES LISTES.
+### POUR FAIRE UNE LISTE QUI CONTIENT LES NOMBRES DE 20000 À 30150, IL FAUT UTILISER "RANGE":
+f = list(range(20000,30151))
+
+print(len(f))
+# thislist[len(f)] ### ICI, ÇA NE MARCHE PAS NON PLUS. SI TU SOUHAITES PLACER LE RÉSULTAT DE "len(f)" DANS UNE LISTE APPELÉE "thislist", TU FAIS:
+thislist = [len(f)]
+### MAIS PAS SÛR QUE CE SOIT UTILE:
+print(thislist) ### TU AS UNE LISTE AVEC UN SEUL ÉLÉMENT, LE NOMBRE 10151...
+
+# x = un nombre dans la liste des articles qu'on ajoute à l'URL
+
+# print(thislist[x])
+# print(url.append[x])
+
+### JE CROIS COMPRENDRE CE QUE TU AS CHERCHÉ À FAIRE. TU N'ÉTAIS PAS TRÈS LOIN.
+### COMMENÇONS PAR EFFACER LE CONTENU DE "thislist":
+
+thislist = [] ### ON PART EN NEUF! C'EST CETTE LISTE QUI VA CONTENIR TOUS LES URLS QU'ON VA CRÉER CI-DESSOUS
+
+### IL SUFFISAIT ENSUITE DE FAIRE UNE BOUCLE AVEC TA LISTE "f":
+
+for numeroDeCode in f:
+
+    ### PUIS D'AJOUTER (CONCATÉNER) CHACUN DES "numeroDeCode" (APRÈS L'AVOIR TRANSFORMÉ DE NOMBRE ("INT") EN TEXTE ("STR")) À LA VARIABLE "url" CRÉÉE PLUS HAUT:
+    urlIndividuel = url + str(numeroDeCode)
+
+    ### ET ENFIN D'ADJOINDRE ("APPEND") CHAQUE "urlIndividuel" À TA LISTE "thislist":
+
+    thislist.append(urlIndividuel)
+
+### UNE FOIS QUE LA BOUCLE A FAIT TOUT SON TRAVAIL, ON PEUT AFFICHER LE CONTENU DE LA LISTE "thislist" ET SA LONGUEUR:
+
+print(thislist, len(thislist))
