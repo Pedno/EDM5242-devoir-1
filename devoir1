@@ -1,0 +1,10 @@
+url = "https://montrealcampus.ca?p="
+f = [20000:30145]
+print(len(f))
+thislist[len(f)]
+print(thislist)
+
+# x = un nombre dans la liste des articles qu'on ajoute à l'URL
+
+print(thislist[x])
+print(url.append[x])
